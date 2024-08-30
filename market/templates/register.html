@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+  Register page 
+{% endblock %}
+{% block content %}
+<body class="text-center" style="color: bisque; background-color: black; padding: 20px;">
+    <div class="container">
+        <form method="POST" class="form-register" style="color: bisque">
+            {{form.hidden_tag()}}
+            <img class="mb-2 mt-4" src="https://res.cloudinary.com/dixurixsd/image/upload/v1724749585/zvylfe1mtgzqvtgdxzah.png" alt="ok">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Create Your Account
+            </h1>
+            <br>
+
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="User Name") }}
+
+            {{ form.email.label() }}
+            {{ form.email(class="form-control", placeholder="Email Address") }}
+
+            {{ form.pass1.label() }}
+            {{ form.pass1(class="form-control", placeholder="Password") }}
+
+            {{ form.pass2.label() }}
+            {{ form.pass2(class="form-control", placeholder="Confirm Password") }}
+
+            <br>
+            <div class="checkbox mb-3">
+                <h6>Already have an account?</h6>
+                <a class="btn btn-sm btn-secondary" href="{{url_for('login_page')}}"> Login</a>
+            </div>
+            {{form.submit(class="btn btn-lg btn-block btn-primary")}}
+        </form>
+    </div>
+</body>
+{% endblock %}
